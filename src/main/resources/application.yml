@@ -11,19 +11,27 @@ spring:
         - id: order
           uri: http://localhost:8081
           predicates:
-            - Path=/orders/** 
+            - Path=/orders/**
         - id: delivery
           uri: http://localhost:8082
           predicates:
-            - Path=/deliveries/** 
+            - Path=/deliveries/**
         - id: customer
           uri: http://localhost:8083
           predicates:
-            - Path=/custormers/**,/myPages/**
+            - Path=/customers/**,/myPages/**
         - id: bookInventory
           uri: http://localhost:8084
           predicates:
-            - Path=/books/**,/deliverables/** 
+            - Path=/books/**,/deliverables/**,/stockInputs/**
+        - id: coupon
+          uri: http://localhost:8085
+          predicates:
+            - Path=/coupons/**
+        - id: myCoupon
+          uri: http://localhost:8086
+          predicates:
+            - Path=/myCoupons/**
       globalcors:
         corsConfigurations:
           '[/**]':
@@ -46,19 +54,27 @@ spring:
         - id: order
           uri: http://order:8080
           predicates:
-            - Path=/orders/** 
+            - Path=/orders/**
         - id: delivery
           uri: http://delivery:8080
           predicates:
-            - Path=/deliveries/** 
+            - Path=/deliveries/**
         - id: customer
           uri: http://customer:8080
           predicates:
             - Path=/custormers/**,/myPages/**
         - id: bookInventory
-          uri: http://bookInventory:8080
+          uri: http://bookinventory:8080
           predicates:
-            - Path=/books/**,/deliverables/** 
+            - Path=/books/**,/deliverables/**,/stockInputs/**
+        - id: coupon
+          uri: http://coupon:8080
+          predicates:
+            - Path=/coupons/**
+        - id: myCoupon
+          uri: http://coupon:8080
+          predicates:
+            - Path=/myCoupons/**
       globalcors:
         corsConfigurations:
           '[/**]':
@@ -72,3 +88,4 @@ spring:
 
 server:
   port: 8080
+
