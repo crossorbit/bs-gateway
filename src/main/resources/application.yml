@@ -72,7 +72,7 @@ spring:
           predicates:
             - Path=/coupons/**
         - id: myCoupon
-          uri: http://coupon:8080
+          uri: http://myCoupon:8080
           predicates:
             - Path=/myCoupons/**
       globalcors:
